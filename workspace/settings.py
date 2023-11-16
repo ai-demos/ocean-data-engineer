@@ -32,9 +32,9 @@ ws_settings = WorkspaceSettings(
     # subnet_ids=["subnet-xyz", "subnet-xyz"],
     # -*- Image Settings
     # Repository for images (for example, to use ECR use the following format)
-    # image_repo="[ACCOUNT_ID].dkr.ecr.us-east-1.amazonaws.com",
+    image_repo="local",
     # Build images locally
-    # build_images=True,
+    build_images=True,
     # Push images after building
     # push_images=True,
 )
