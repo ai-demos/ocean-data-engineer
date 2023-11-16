@@ -8,7 +8,7 @@ from phi.workspace.settings import WorkspaceSettings
 #
 ws_settings = WorkspaceSettings(
     # Workspace name: used for naming resources
-    ws_name="junior-de",
+    ws_name="ocean-de",
     # Path to the workspace root
     ws_root=Path(__file__).parent.parent.resolve(),
     # -*- Dev settings
