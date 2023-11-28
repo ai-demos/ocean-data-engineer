@@ -7,14 +7,16 @@ st.set_page_config(
     page_icon=":snowman:",
 )
 
-st.title(":snowman: Junior Data Engineer")
+st.title(":snowman: Ocean Data Engineer")
 st.markdown('<a href="https://github.com/phidatahq/phidata"><h4>by phidata</h4></a>', unsafe_allow_html=True)
 
 
 def main() -> None:
     st.markdown("### Select your Junior Data Engineer:")
-    st.markdown("#### 1. DuckGPT Local")
-    st.markdown("#### 2. DuckGPT S3")
+    st.markdown("#### 1. Ocean Data Engineer")
+    st.markdown("#### 2. DuckGPT Local")
+    st.markdown("#### 3. DuckGPT S3")
+    st.markdown("#### 4. Python Data Engineer")
     st.sidebar.success("Select App from above")
 
 
