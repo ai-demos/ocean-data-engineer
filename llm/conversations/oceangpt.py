@@ -8,6 +8,16 @@ from llm.agents.oceangpt import oceangpt_duckdb_agent, oceangpt_file_agent
 from oceangpt.semantic_model import get_ocean_semantic_model
 
 
+def say_hello() -> str:
+    """Function that greets the user, always run this before starting a conversation"""
+
+    # Do something
+    print("Hello")
+
+    # Return the message to gpt
+    return "success"
+
+
 def get_oceangpt_conversation(
     user_name: Optional[str] = None,
     conversation_id: Optional[str] = None,
@@ -26,7 +36,9 @@ def get_oceangpt_conversation(
         storage=oceangpt_storage,
         debug_mode=debug_mode,
         monitoring=True,
+        tools=[say_hello],
         agents=[oceangpt_file_agent],
+        introduction="Hi I'm OceanGPT, I'm here to help you with your data engineering tasks.",
         function_calls=True,
         show_function_calls=True,
         system_prompt=f"""\
