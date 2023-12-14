@@ -7,7 +7,7 @@ from app.openai_key import get_openai_key
 from app.password import check_password
 from app.reload import reload_button
 from app.user_name import get_user_name
-from llm.conversations.python import get_py_conversation
+from llm.conversations.python import get_pygpt_conversation
 from utils.log import logger
 
 
@@ -37,7 +37,7 @@ def main() -> None:
     py_conversation: Conversation
     if "py_conversation" not in st.session_state or st.session_state["py_conversation"] is None:
         logger.info("---*--- Creating PyGPT Conversation ---*---")
-        py_conversation = get_py_conversation(
+        py_conversation = get_pygpt_conversation(
             user_name=user_name,
             debug_mode=True,
         )
@@ -95,7 +95,7 @@ def main() -> None:
         if st.session_state["py_conversation_id"] != new_pdf_conversation_id:
             logger.debug(f"Loading conversation {new_pdf_conversation_id}")
             logger.info("---*--- Loading PyGPT Conversation ---*---")
-            st.session_state["py_conversation"] = get_py_conversation(
+            st.session_state["py_conversation"] = get_pygpt_conversation(
                 user_name=user_name,
                 conversation_id=new_pdf_conversation_id,
                 debug_mode=True,
