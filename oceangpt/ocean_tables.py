@@ -1,8 +1,6 @@
 from typing import List, Optional
 from pydantic import BaseModel
 
-from phi.agent.duckdb import DuckDbAgent
-
 from workspace.settings import ws_settings
 from utils.log import logger
 

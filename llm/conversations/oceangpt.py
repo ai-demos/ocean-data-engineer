@@ -4,7 +4,7 @@ from phi.llm.openai import OpenAIChat
 from phi.conversation import Conversation
 
 from llm.storage import oceangpt_storage
-from llm.agents.oceangpt import oceangpt_duckdb_agent, oceangpt_file_agent
+from llm.tools.oceangpt import oceangpt_duckdb_tools, oceangpt_file_tools
 from oceangpt.semantic_model import get_ocean_semantic_model
 
 
@@ -36,8 +36,7 @@ def get_oceangpt_conversation(
         storage=oceangpt_storage,
         debug_mode=debug_mode,
         monitoring=True,
-        tools=[say_hello],
-        agents=[oceangpt_file_agent],
+        tools=[say_hello, oceangpt_file_tools],
         introduction="Hi I'm OceanGPT, I'm here to help you with your data engineering tasks.",
         function_calls=True,
         show_function_calls=True,
